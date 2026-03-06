@@ -13,6 +13,8 @@ website:
         menu:
           - href: projects/gold-reserves.qmd
             text: Gold Reserves (ggplot2 Redesign)
+          - href: projects/new.qmd
+            text: test project
       - about.qmd
       - stat-515.qmd
       # Add additional projects...

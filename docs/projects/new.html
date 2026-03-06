@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="ggplot2 redesign of the gold reserves infographic (Visual Capitalist style).">
 
-<title>Ranked Unmined Gold Reserves by Country – STAT-515 Projects</title>
+<title>new – STAT-515 Projects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,34 +167,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#the-image" id="toc-the-image" class="nav-link" data-scroll-target="#the-image">The image</a>
-  <ul class="collapse">
-  <li><a href="#original" id="toc-original" class="nav-link" data-scroll-target="#original">Original</a></li>
-  </ul></li>
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
-  <li><a href="#source" id="toc-source" class="nav-link" data-scroll-target="#source">Source</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ranked Unmined Gold Reserves by Country</h1>
+<h1 class="title">new</h1>
 </div>
 
-<div>
-  <div class="description">
-    ggplot2 redesign of the gold reserves infographic (Visual Capitalist style).
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -210,59 +192,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This project is a recreation of the <strong>“Unmined Reserves of Gold”</strong> infographic, below, using <strong>ggplot2</strong>. The original shows estimated gold reserves by country in metric tons and USD value. This redesign focuses on clearly stating the message.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/GoldDepositFooters.jpg" class="img-fluid figure-img"></p>
-<figcaption>Source image: https://elements.visualcapitalist.com/ranked-unmined-gold-reserves-by-country-2025/</figcaption>
-</figure>
-</div>
-</section>
-<section id="the-image" class="level2">
-<h2 class="anchored" data-anchor-id="the-image">The image</h2>
-<p>For this project I drew inspiration from my fiancee Emily’s home office, where she conducts research on economic markets. As a professional economist she frequently works with data-rich visual resources. Among these, one particularly influential source was <a href="https://elements.visualcapitalist.com/">Elements</a>, a platform dedicated to creating data-driven visuals to bridge the gap between the global trends shaping our future and the raw materials powering them.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/IMG_1250.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Emily’s home office</figcaption>
-</figure>
-</div>
-<section id="original" class="level3">
-<h3 class="anchored" data-anchor-id="original">Original</h3>
-<p>In the original image, <strong>“Ranked: Unmined Gold Reserves by Country”</strong>, the graphic presents a detailed comparison of countries’ unmined gold reserves, ranked by estimated weight. The figure reports reserves in metric tons adn also provides an inferred monetary value for these reserves, calculated using a pegged gold price of $4362 per unit.</p>
-<p>The data source the original image references is credetid to the <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf/">U.S Geological Survey Janurary 2025</a>. As stated in the reports table of contentx, the section reporting gold is found on page 82 directly after germanium. A table is found on the following page which includes the <a href="../data/data.csv">data</a> used for this project.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"World Mine Production and Reserves: Reserves for Canada, China, Colombia, Indonesia, Kazakhstan, Peru,</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">Russia, and Tanzania were revised based on company and Government reports. "</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "World Mine Production and Reserves: Reserves for Canada, China, Colombia, Indonesia, Kazakhstan, Peru,\nRussia, and Tanzania were revised based on company and Government reports. "</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This is the new prject</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</section>
-</section>
-<section id="data-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation">Data preparation</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data, create a filtered set of data from the frame above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the ggplot image adding layers incrementally</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Include sources for the original images and data below</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="source" class="level2">
-<h2 class="anchored" data-anchor-id="source">Source</h2>
-<ul>
-<li><strong>Data / concept:</strong> U.S. Geological Survey, January 2025; value of reserves at gold price $4,362/troy oz.</li>
-<li><strong>Original infographic:</strong> Visual Capitalist <a href="../images/GoldDepositFooters.jpg">reference image:</a>.</li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
