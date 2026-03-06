@@ -1,0 +1,109 @@
+---
+title: "test-1"
+format: html
+---
+
+
+
+
+## New project 1
+
+#### This is new
+Here is the new project!
+
+
+```{r}
+# setup
+
+library(tidyverse)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+A choropleth map is a type of thematic map in which a set of pre-defined areas is colored or patterned in proportion to a statistical variable that represents an aggregate summary of a geographic characteristic within each area, such as population density or per-capita income.
+
+First let's get familiar with the `map_data` function. This function can easily turn data from the `maps` package into a data frame that is suitable for plotting with `ggplot2`. This functions contains maps of several countries including 'France', 'Italy' and many maps of 'USA'. Please see the description to learn more about this.
+
+```{r}
+library(tidyverse)
+```
+
+```{r echo=FALSE}
+hw <- theme_gray()+ theme(
+  plot.title=element_text(hjust=0.5),
+  plot.subtitle=element_text(hjust=0.5),
+  plot.caption=element_text(hjust=-.5),
+
+  strip.text.y = element_blank(),
+  strip.background=element_rect(fill=rgb(.9,.95,1),
+    colour=gray(.5), linewidth =.2),
+
+  panel.border=element_rect(fill=FALSE,colour=gray(.70)),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.minor.x = element_blank(),
+  panel.spacing.x = unit(0.10,"cm"),
+  panel.spacing.y = unit(0.05,"cm"),
+
+# axis.ticks.y= element_blank()
+  axis.ticks=element_blank(),
+  axis.text=element_text(colour="black"),
+  axis.text.y=element_text(margin=margin(0,3,0,3)),
+  axis.text.x=element_text(margin=margin(-1,0,3,0))
+)
+```
+
+# Tutorial
+
+In this example let's try to extract data from a "world map" and try to plot it using `ggplot`.
+
+```{r}
+#extracting data and saving as a tibble
+world_tbl <- map_data("world") %>% as_tibble()
+world_tbl
+```
+
+Now with the `world_tbl`, let's try to visualize it.
+
+```{r}
+world_base <- world_tbl %>%
+  ggplot() +
+  geom_map(
+    aes(long, lat, map_id = region),
+    map = world_tbl,
+    color = "gray80", fill = "gray30", size = 0.3) + hw
+world_base
+```
+
+Notice that this is a "Mercator" Projection of the 'World Map'. But if you want a different projection, such as 'Orthogonal Projection" you can use the following commands. In order to learn about different maps projections can be used in `ggplot2` please use the following this [link.](https://rdrr.io/cran/mapproj/man/mapproject.html)
+
+```{r}
+world_base +
+  coord_map("ortho", orientation = c(39, -98, 0))
+```
+
+By changing the `orientation` coordinates above, you should be able to rotate the globe on X, Y and Z axes.
+
+Now let's look at a map of 'USA' with 'orthogonal projection'.
+
+```{r}
+usa_tbl <- map_data("state") %>% as_tibble()
+
+usa_tbl %>%
+  ggplot(aes(long, lat, map_id = region)) +
+  geom_map(
+    map = usa_tbl,
+    color = "gray80", fill = "gray30", size = 0.3) +
+  coord_map("ortho", orientation = c(39, -98, 0)) +hw
+```
+
+# Example 1 : EU Vaccination Data
+
+
+
